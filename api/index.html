@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SportZone - catálogo deportivo con 20 productos">
+  <title>SportZone | Tienda Deportiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="top-strip">
+    <span>⚡ ENERGÍA PARA SUPERAR TUS LÍMITES</span>
+    <span>🚚 Envíos a todo el Perú</span>
+  </div>
+
+  <header class="hero" id="inicio">
+    <nav class="nav">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">SZ</span>
+        <span>SPORT<span>ZONE</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <button class="nav-cart" type="button" onclick="alternarCarrito()" aria-label="Abrir carrito">
+        🛒 <span id="contadorCarrito">0</span>
+      </button>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">EQUÍPATE. ENTRENA. GANA.</p>
+        <h1>EL DEPORTE<br><span>NO SE DETIENE.</span></h1>
+        <p>Encuentra ropa, calzado y accesorios deportivos diseñados para acompañarte en cada entrenamiento y competencia.</p>
+        <a class="hero-btn" href="#productos">VER PRODUCTOS <span>→</span></a>
+      </div>
+      <div class="hero-badge">
+        <strong>20</strong>
+        <span>PRODUCTOS<br>DISPONIBLES</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="benefits" id="nosotros">
+      <div><b>🏆</b><span><strong>CALIDAD</strong><small>Productos seleccionados</small></span></div>
+      <div><b>⚡</b><span><strong>ENTREGA RÁPIDA</strong><small>Despachos a todo el Perú</small></span></div>
+      <div><b>💳</b><span><strong>PAGO SEGURO</strong><small>Compra con confianza</small></span></div>
+      <div><b>📲</b><span><strong>ATENCIÓN</strong><small>Consulta por WhatsApp</small></span></div>
+    </section>
+
+    <section class="catalogo" id="productos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CATÁLOGO 2026</p>
+          <h2>LISTOS PARA <span>ENTRENAR</span></h2>
+        </div>
+        <p>20 productos deportivos con precios en soles. Usa el selector del final de la página para cambiar de moneda.</p>
+      </div>
+
+      <div class="sports-filter" aria-label="Categorías">
+        <button class="filter active" data-filter="Todos">Todos</button>
+        <button class="filter" data-filter="Fútbol">Fútbol</button>
+        <button class="filter" data-filter="Running">Running</button>
+        <button class="filter" data-filter="Fitness">Fitness</button>
+        <button class="filter" data-filter="Accesorios">Accesorios</button>
+      </div>
+
+      <div class="product-list" id="productList">
+
+        <article class="product-card" data-category="Running">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Zapatillas Runner Pro">
+            <span class="sport-icon">🏃</span>
+          </div>
+          <div class="product-info">
+            <span class="category">RUNNING</span>
+            <h3>Zapatillas Runner Pro</h3>
+            <p>Amortiguación ligera, suela de alto agarre y diseño para entrenamientos diarios.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="189.90">S/ 189.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Zapatillas Runner Pro', 189.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Zapatillas Runner Pro')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fútbol">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85" alt="Polo deportivo Pro Match">
+            <span class="sport-icon">⚽</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FÚTBOL</span>
+            <h3>Polo Deportivo Pro Match</h3>
+            <p>Tejido transpirable de secado rápido para partidos y sesiones intensas.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="79.90">S/ 79.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Polo Deportivo Pro Match', 79.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Polo Deportivo Pro Match')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fitness">
+          <div class="product-image">
+            <span class="tag">OFERTA</span>
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85" alt="Guantes Power Grip">
+            <span class="sport-icon">🏋️</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FITNESS</span>
+            <h3>Guantes Power Grip</h3>
+            <p>Palma reforzada y cierre ajustable para mejorar el agarre durante tus rutinas.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="49.90">S/ 49.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Guantes Power Grip', 49.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Guantes Power Grip')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Accesorios">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85" alt="Botella Hydro Sport">
+            <span class="sport-icon">💧</span>
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESORIOS</span>
+            <h3>Botella Hydro Sport 750 ml</h3>
+            <p>Botella resistente, reutilizable y práctica para mantenerte hidratado.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="39.90">S/ 39.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Botella Hydro Sport 750 ml', 39.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Botella Hydro Sport 750 ml')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fútbol">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85" alt="Balón Pro League">
+            <span class="sport-icon">⚽</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FÚTBOL</span>
+            <h3>Balón Pro League</h3>
+            <p>Construcción resistente y superficie de excelente control para cancha.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="119.90">S/ 119.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Balón Pro League', 119.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Balón Pro League')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Running">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=85" alt="Short Sprint">
+            <span class="sport-icon">🏃</span>
+          </div>
+          <div class="product-info">
+            <span class="category">RUNNING</span>
+            <h3>Short Sprint Ultra</h3>
+            <p>Ligero y flexible, con tejido que facilita la movilidad en carrera.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="59.90">S/ 59.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Short Sprint Ultra', 59.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Short Sprint Ultra')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fitness">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?auto=format&fit=crop&w=900&q=85" alt="Bandas de resistencia">
+            <span class="sport-icon">💪</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FITNESS</span>
+            <h3>Bandas Resistance Pack</h3>
+            <p>Set de bandas de diferentes resistencias para fuerza, movilidad y activación.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="69.90">S/ 69.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Bandas Resistance Pack', 69.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Bandas Resistance Pack')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Accesorios">
+          <div class="product-image">
+            <span class="tag">OFERTA</span>
+            <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?auto=format&fit=crop&w=900&q=85" alt="Colchoneta Fitness">
+            <span class="sport-icon">🧘</span>
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESORIOS</span>
+            <h3>Colchoneta Fitness Pro</h3>
+            <p>Superficie acolchada y antideslizante para yoga, abdominales y estiramientos.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="89.90">S/ 89.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Colchoneta Fitness Pro', 89.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Colchoneta Fitness Pro')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fútbol">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85" alt="Camiseta Team Elite">
+            <span class="sport-icon">⚽</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FÚTBOL</span>
+            <h3>Camiseta Team Elite</h3>
+            <p>Modelo de competición con paneles transpirables y corte deportivo.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="99.90">S/ 99.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Camiseta Team Elite', 99.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Camiseta Team Elite')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Running">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85" alt="Smart Sport Watch">
+            <span class="sport-icon">⌚</span>
+          </div>
+          <div class="product-info">
+            <span class="category">RUNNING</span>
+            <h3>Smart Sport Watch</h3>
+            <p>Diseño deportivo para acompañar tus sesiones y controlar tu rendimiento.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="159.90">S/ 159.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Smart Sport Watch', 159.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Smart Sport Watch')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fitness">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85" alt="Mancuernas Iron Set">
+            <span class="sport-icon">🏋️</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FITNESS</span>
+            <h3>Mancuernas Iron Set</h3>
+            <p>Par de mancuernas compactas para entrenamientos de fuerza en casa.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="109.90">S/ 109.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Mancuernas Iron Set', 109.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Mancuernas Iron Set')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Accesorios">
+          <div class="product-image">
+            <span class="tag">OFERTA</span>
+            <img src="https://images.unsplash.com/photo-1526401485004-2aa7f3f0b4c8?auto=format&fit=crop&w=900&q=85" alt="Mochila Sport">
+            <span class="sport-icon">🎒</span>
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESORIOS</span>
+            <h3>Mochila Sport Training</h3>
+            <p>Compartimentos amplios para ropa, zapatillas y accesorios de entrenamiento.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="129.90">S/ 129.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Mochila Sport Training', 129.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Mochila Sport Training')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Running">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=900&q=85" alt="Casaca Wind Runner">
+            <span class="sport-icon">🏃</span>
+          </div>
+          <div class="product-info">
+            <span class="category">RUNNING</span>
+            <h3>Casaca Wind Runner</h3>
+            <p>Capa ligera para correr con viento, ideal para calentamiento y exteriores.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="139.90">S/ 139.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Casaca Wind Runner', 139.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Casaca Wind Runner')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fútbol">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1552318965-6e6be7484b9a?auto=format&fit=crop&w=900&q=85" alt="Medias Football Grip">
+            <span class="sport-icon">⚽</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FÚTBOL</span>
+            <h3>Medias Football Grip</h3>
+            <p>Tejido elástico y ajuste cómodo para mantener estabilidad durante el juego.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="34.90">S/ 34.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Medias Football Grip', 34.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Medias Football Grip')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fitness">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85" alt="Cinturón Power Lift">
+            <span class="sport-icon">💪</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FITNESS</span>
+            <h3>Cinturón Power Lift</h3>
+            <p>Soporte firme para levantamiento de pesas y ejercicios de fuerza.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="84.90">S/ 84.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Cinturón Power Lift', 84.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Cinturón Power Lift')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Accesorios">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=85" alt="Cuerda Speed Jump">
+            <span class="sport-icon">🔥</span>
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESORIOS</span>
+            <h3>Cuerda Speed Jump</h3>
+            <p>Diseño ligero con mangos cómodos para cardio y entrenamiento de velocidad.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="44.90">S/ 44.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Cuerda Speed Jump', 44.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Cuerda Speed Jump')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Running">
+          <div class="product-image">
+            <span class="tag">OFERTA</span>
+            <img src="https://images.unsplash.com/photo-1556637640-2c80d3201be8?auto=format&fit=crop&w=900&q=85" alt="Gorra Run Shield">
+            <span class="sport-icon">🧢</span>
+          </div>
+          <div class="product-info">
+            <span class="category">RUNNING</span>
+            <h3>Gorra Run Shield</h3>
+            <p>Protección ligera para tus entrenamientos al aire libre y carreras.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="42.90">S/ 42.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Gorra Run Shield', 42.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Gorra Run Shield')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fútbol">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85" alt="Short Football Elite">
+            <span class="sport-icon">⚽</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FÚTBOL</span>
+            <h3>Short Football Elite</h3>
+            <p>Corte cómodo y tejido deportivo para moverte con libertad en la cancha.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="64.90">S/ 64.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Short Football Elite', 64.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Short Football Elite')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Fitness">
+          <div class="product-image">
+            <span class="tag">NUEVO</span>
+            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=85" alt="Kettlebell Core 12kg">
+            <span class="sport-icon">🏋️</span>
+          </div>
+          <div class="product-info">
+            <span class="category">FITNESS</span>
+            <h3>Kettlebell Core 12 kg</h3>
+            <p>Peso compacto con asa ergonómica para fuerza, potencia y acondicionamiento.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="149.90">S/ 149.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Kettlebell Core 12 kg', 149.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Kettlebell Core 12 kg')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Accesorios">
+          <div class="product-image">
+            <span class="tag">TOP</span>
+            <img src="https://images.unsplash.com/photo-1585832770485-e68a5dbfad52?auto=format&fit=crop&w=900&q=85" alt="Rodilleras Sport Support">
+            <span class="sport-icon">🦵</span>
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESORIOS</span>
+            <h3>Rodilleras Sport Support</h3>
+            <p>Soporte elástico para acompañar tus entrenamientos y actividades deportivas.</p>
+            <div class="product-bottom">
+              <strong class="precio" data-precio-pen="54.90">S/ 54.90</strong>
+              <button class="add-btn" onclick="agregarAlCarrito('Rodilleras Sport Support', 54.90, this)">AGREGAR 🛒</button>
+            </div>
+            <button class="whatsapp-link" onclick="enviarWhatsApp(event, 'Rodilleras Sport Support')">Consultar por WhatsApp →</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-main">
+      <div>
+        <a class="brand footer-brand" href="#inicio">
+          <span class="brand-mark">SZ</span>
+          <span>SPORT<span>ZONE</span></span>
+        </a>
+        <p>Equipamiento deportivo para personas que no se rinden.</p>
+      </div>
+      <div>
+        <h3>CONTACTO</h3>
+        <p>📱 WhatsApp: <strong>+51 949152796</strong></p>
+        <p>📦 Envíos a todo el Perú</p>
+      </div>
+      <div>
+        <h3>HORARIO</h3>
+        <p>Lunes a sábado</p>
+        <p>9:00 a. m. — 7:00 p. m.</p>
+      </div>
+    </div>
+
+    <div class="currency-box">
+      <div>
+        <p class="eyebrow">TIPO DE CAMBIO</p>
+        <h3>Ver precios en otra moneda</h3>
+        <span id="estado-moneda">Cargando tipo de cambio...</span>
+      </div>
+      <label>
+        <span>MONEDA</span>
+        <select id="selector-moneda" onchange="cambiarMoneda(this.value)">
+          <option value="PEN">S/ Soles (PEN)</option>
+          <option value="USD">$ Dólares (USD)</option>
+          <option value="EUR">€ Euros (EUR)</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="copyright">© 2026 SportZone · Todos los derechos reservados.</div>
+  </footer>
+
+  <button id="btnInicio" class="back-top" onclick="irAlInicio()" aria-label="Volver al inicio">↑</button>
+
+  <div id="fondoCarrito" class="cart-backdrop" onclick="alternarCarrito()"></div>
+  <aside id="panelCarrito" class="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">SPORTZONE</p>
+        <h2>MI CARRITO</h2>
+      </div>
+      <button onclick="alternarCarrito()" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div id="listaCarrito" class="cart-list"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>TOTAL</span><strong id="totalCarrito">S/ 0.00</strong></div>
+      <button class="checkout-btn" onclick="enviarCarritoPorWhatsApp(event)">CONSULTAR PEDIDO POR WHATSAPP</button>
+      <button class="clear-btn" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
