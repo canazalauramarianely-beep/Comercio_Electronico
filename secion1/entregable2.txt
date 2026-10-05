@@ -1,0 +1,117 @@
+LOS PLANOS DE TRANSFORMACIÓN (AS-IS Y TO-BE)
+Sesión 1 — Introducción a los Negocios Electrónicos y E-business
+
+Alumno(a): Maria Nely Canaza Laura
+Proyecto / Negocio: TiendaSport
+
+1. PLANO AS-IS (ESTADO ACTUAL)
+Actores involucrados: Cliente
+
+Asesor comercial 
+ Vendedor
+
+Encargado de Almacén 
+ Operaciones
+
+Registros manuales (Hojas de cálculo en Excel, documentos PDF, anotaciones físicas)
+Flujo paso a paso: 1_El Cliente solicita información o disponibilidad de un producto/servicio a través de WhatsApp, llamadas o presencialmente.
+2_El Cliente solicita información o disponibilidad de un producto/servicio a través de WhatsApp, llamadas o presencialmente.
+3_El Asesor comercial elabora la cotización manualmente (en Word o PDF) y la envía al cliente.
+4_El Cliente aprueba la propuesta y realiza la transferencia bancaria, enviando la captura del comprobante de pago por mensaje o correo.
+5_El Asesor comercial valida el pago con el área de contabilidad/caja y registra la orden en su hoja de seguimiento.
+6_El Encargado de Almacén recibe la orden manual, empaqueta el pedido y coordina el despacho final al cliente.
+Punto de fricción / cuello de botella: ° Verificación manual de inventarios y pagos: El tiempo invertido en consultar stocks en archivos Excel desactualizados y validar comprobantes de pago de forma manual genera demoras en la respuesta, riesgo de vender productos agotados y alta dependencia de mano de obra en tareas repetitivas.
+
+° Código PlantUML (para generar tu diagrama As-Is):
+@startuml
+title Plano As-Is (Estado Actual)
+
+actor "Cliente" as cliente
+actor "Asesor Comercial" as asesor
+actor "Almacén" as almacen
+
+rectangle "Procesos Manuales y Archivos" {
+  [Control de Inventario (Excel)] as excel
+  [Cotizaciones y Registro (PDF/Excel)] as pdf
+}
+
+cliente -> asesor : 1. Consulta disponibilidad
+asesor -> excel : 2. Verifica stock manualmente
+excel --> asesor : 3. Retorna estado de stock
+asesor -> cliente : 4. Envía cotización en PDF
+cliente -> asesor : 5. Envía comprobante de pago
+asesor -> pdf : 6. Valida pago y registra orden
+asesor -> almacen : 7. Solicita empaque y despacho
+almacen -> cliente : 8. Entrega producto
+@uml
+
+(Recuerda adjuntar también tu diagrama As-Is por separado.)
+
+2. PLANO TO-BE (ESTADO FUTURO)
+Capas / componentes de la nueva arquitectura: ° Capas / componentes de la nueva arquitectura:
+
+° Capa de Experiencia (Frontend): Plataforma E-commerce / Portal Web interactivo y adaptado a móviles.
+
+° Capa de Integración (Middleware / APIs): Pasarela de Integración / API Gateway para conexión de sistemas.
+
+° Capa de Negocio y Operaciones (Backend):
+
+° Pasarela de Pagos: Integración automatizada para pagos con tarjeta, Yape, Plin, etc.
+
+° Sistema ERP: Gestión automatizada de inventarios, órdenes de compra y facturación electrónica.
+
+° Sistema CRM: Gestión de clientes, historial de compras y automatización de marketing.
+
+° Capa de Infraestructura: Servidores en la nube (Cloud Hosting).
+Flujo paso a paso: 1_ El Cliente navega por el catálogo del E-commerce, visualiza el stock en tiempo real y añade los productos al carrito de compras.
+
+2_En el checkout, el Cliente realiza el pago a través de la Pasarela de Pagos, la cual valida la transacción automáticamente en segundos.
+
+3_El E-commerce envía la orden confirmada al ERP, actualizando el inventario y generando la factura/comprobante electrónico al instante.
+
+4_ El CRM registra la interacción y datos del cliente para futuras campañas.
+
+5_El ERP genera una alerta automática en la terminal del Encargado de Almacén con la lista de empaque.
+
+6_ El pedido es entregado al operador logístico para su envío con código de seguimiento en línea enviado al  cliente
+Beneficios esperados: ° Atención y ventas 24/7: Disponibilidad constante sin depender del horario laboral del personal comercial.
+
+° Reducción de tiempos de procesamiento: La validación de pagos e inventarios pasa de tomar horas a ejecutarse en segundos.
+
+° Escalabilidad y precisión: Eliminación de errores humanos por registro manual y visibilidad de datos en tiempo real para la toma de decisiones.
+
+° Código PlantUML (para generar tu diagrama To-Be):@startuml
+title Plano To-Be (Estado Futuro) - Arquitectura Empresarial
+
+package "Capa de Experiencia" {
+  [Portal Web / E-Commerce] as ecommerce
+}
+
+package "Capa de Integración" {
+  [Pasarela de Pagos] as pagos
+  [API Gateway] as api
+}
+
+package "Capa de Negocio y Sistemas (Backend)" {
+  [Sistema ERP (Inventario / Pedidos)] as erp
+  [Sistema CRM (Clientes)] as crm
+  [Facturación Electrónica] as facturas
+}
+
+actor "Cliente" as cliente
+actor "Almacén" as almacen
+
+cliente -> ecommerce : 1. Selecciona productos
+ecommerce -> pagos : 2. Procesa pago en línea
+pagos --> ecommerce : 3. Confirmación de pago
+ecommerce -> api : 4. Transfiere datos de la orden
+api -> erp : 5. Actualiza inventario y genera orden
+api -> crm : 6. Registra/Actualiza cliente
+erp -> facturas : 7. Emite comprobante electrónico
+erp -> almacen : 8. Genera orden de empaque
+almacen -> cliente : 9. Despacho con tracking
+@uml
+(Recuerda adjuntar también tu diagrama To-Be por separado.)
+
+CONCLUSIÓN
+La transformación del estado As-Is al To-Be sustituye el procesamiento manual e inconexo por una arquitectura empresarial integrada en la nube (E-commerce, Pasarela de Pagos y ERP/CRM). Esta digitalización elimina los cuellos de botella operativos en la atención al cliente y la validación de pagos, permitiendo operaciones 24/7, escalabilidad del negocio y una experiencia de compra inmediata y transparente.
